@@ -1,18 +1,26 @@
 #include <Arduino.h>
+#include "drivers/display/ILI9341.h"
 
-#define LCD_BL 45
+ILI9341 display;
 
 void setup()
 {
     Serial.begin(115200);
 
-    pinMode(LCD_BL, OUTPUT);
+    delay(2000);
 
-    digitalWrite(LCD_BL, HIGH);
+    Serial.println();
+    Serial.println("======================");
+    Serial.println("PocketPlayer");
+    Serial.println("======================");
 
-    Serial.println("Backlight ligado!");
+    display.begin();
+
+    Serial.println("Cheguei ao fim do setup");
 }
 
 void loop()
 {
+    Serial.println("Loop...");
+    delay(1000);
 }
