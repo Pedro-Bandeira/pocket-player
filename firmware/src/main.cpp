@@ -1,21 +1,18 @@
 #include <Arduino.h>
 
+#define LCD_BL 45
+
 void setup()
 {
     Serial.begin(115200);
 
-    // Aguarda a serial inicializar
-    delay(3000);
+    pinMode(LCD_BL, OUTPUT);
 
-    Serial.println();
-    Serial.println("==============================");
-    Serial.println("PocketPlayer v0.1.0");
-    Serial.println("==============================");
-    Serial.println("Setup executado!");
+    digitalWrite(LCD_BL, HIGH);
+
+    Serial.println("Backlight ligado!");
 }
 
 void loop()
 {
-    Serial.println("Loop executando...");
-    delay(1000);
 }
